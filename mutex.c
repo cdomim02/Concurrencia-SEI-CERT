@@ -1,0 +1,9 @@
+#include <threads.h>
+// ...
+mutex_create(...);
+// ...
+mutex_lock(...);
+/*Intrucciones ejecutadas de forma secuencial*/
+mutex_unlock(...);
+// ...
+mutex_destroy(...);
