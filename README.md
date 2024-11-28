@@ -9,25 +9,31 @@ En este repositorio se analizará la regla de concurrencia "CON31-C/CON50-CPP. D
 ## Ejeccución de las Pruebas
 #### Para ejecutar la prueba con vulnerabilidades se ha usado:
 ```
-
+gcc vulnerable.c -o vulnerable.exe
+./vulnerable.exe
 ```
 #### Para ejecutar la solución basada en el SEI CERT se ha usado:
 ```
-
+gcc corregidoSEICERT.c -o corregidoSEICERT.exe
+./corregidoSEICERT.exe
 ```
 #### Para ejecutar la solución propia con una herramienta automática (OpenMP) se ha usado:
 ```
-
+gcc corregidoOMP.c -o corregidoOMP.exe -fopenmp
+./corregidoOMP.exe
 ```
 
 ## Entorno de ejecución:
 #### Para hacer estas pruebas se ha usado la máquina Docker proporcionada en el repositorio, la cual se puede construir y ejecutar con:
 ```
-
+docker build -t con .
+docker run --rm -it --name con con
 ```
-Dentro de ella se usan los comandos vistos anterior mente. Tener en cuenta que se usan las siguientes versiones de las herramientas:
-
-
+#### Dentro de ella se usan los comandos vistos anterior mente. Tener en cuenta que se usan las siguientes versiones de las herramientas:
+    Ubuntu 24.04 Lts
+    gcc (Ubuntu 13.2.0-23ubuntu4) 13.2.0
+    OpenMP 5.2 (si se compila con gcc)
+    
 ## Referencias
 - [CON-31-C: Do not destroy a mutex while it is locked](https://wiki.sei.cmu.edu/confluence/display/c/CON31-C.+Do+not+destroy+a+mutex+while+it+is+locked)
 - [CERT: Mutex destroy while locked](https://help.klocwork.com/2024/en-us/reference/cert.conc.mutex.destroy_while_locked.htm)
