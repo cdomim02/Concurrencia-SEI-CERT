@@ -33,7 +33,10 @@ docker run --rm -it --name con con
     Ubuntu 24.04 Lts
     gcc (Ubuntu 13.2.0-23ubuntu4) 13.2.0
     OpenMP 5.2 (si se compila con gcc)
-    
+
+## Enlace al Video Explicativo
+https://youtu.be/Amew0iuHJts
+
 ## Referencias
 - [CON-31-C: Do not destroy a mutex while it is locked](https://wiki.sei.cmu.edu/confluence/display/c/CON31-C.+Do+not+destroy+a+mutex+while+it+is+locked)
 - [CERT: Mutex destroy while locked](https://help.klocwork.com/2024/en-us/reference/cert.conc.mutex.destroy_while_locked.htm)
