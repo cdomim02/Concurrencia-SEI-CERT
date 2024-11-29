@@ -31,6 +31,7 @@ int do_work(void *arg) {
  
 int main(void) {
   thrd_t threads[max_threads];
+  int thread_ids[max_threads]; //Evitar cond carrera al leer id
 
   printf("Creando mutex e hilos...\n");
    
@@ -41,7 +42,8 @@ int main(void) {
 
   // Crear hilos y asignarles la tarea
   for (size_t i = 0; i < max_threads; i++) {
-    if (thrd_success != thrd_create(&threads[i], do_work, &i)) {
+    thread_ids[i] = i + 1;
+    if (thrd_success != thrd_create(&threads[i], do_work, &thread_ids[i])) {
       /* Manejar error */
     }
   }
